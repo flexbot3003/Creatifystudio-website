@@ -10,6 +10,7 @@ import { Testimonials } from './sections/Testimonials';
 import { FAQ } from './sections/FAQ';
 import { Footer } from './sections/Footer';
 import { Construction } from './sections/Construction';
+import { Contact } from './sections/Contact';
 import { siteConfig } from './config';
 import './App.css';
 
@@ -45,7 +46,7 @@ export default function App() {
         <Route path="/about" element={<Construction />} />
         <Route path="/services" element={<Construction />} />
         <Route path="/work" element={<Construction />} />
-        <Route path="/contact" element={<Construction />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );
