@@ -30,10 +30,10 @@ export const heroConfig: HeroConfig = {
   overlayText: "Website by Creatify",
   brandName: "CREATIFY",
   navLinks: [
-    { label: "Work", href: "#work" },
-    { label: "Services", href: "#services" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Work", href: "/work" },
+    { label: "Services", href: "/services" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
   ],
 };
 // Intro Grid Section
@@ -311,7 +311,7 @@ export const faqConfig: FAQConfig = {
   titleItalic: "Asked Questions",
   ctaText: "Still have questions?",
   ctaButtonText: "Get in Touch",
-  ctaHref: "#contact",
+  ctaHref: "/contact",
   faqs: [
     {
       id: "faq-1",
@@ -375,10 +375,10 @@ export const footerConfig: FooterConfig = {
   navigationLabel: "Navigation",
   navLinks: [
     { label: "Home", href: "www.creatifystudios.co.za" },
-    { label: "Work", href: "#work" },
-    { label: "Services", href: "#services" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Work", href: "/work" },
+    { label: "Services", href: "/services" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
   ],
   socialLabel: "Follow Along",
   socialLinks: [
