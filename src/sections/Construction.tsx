@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function Construction() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-forest-dark text-white p-6 text-center">
@@ -8,12 +10,12 @@ export function Construction() {
         We are currently polishing this section of the Creatify website. 
         Check back soon for the full reveal!
       </p>
-      <a 
-        href="#" 
-        className="px-8 py-3 bg-white text-softblack font-sans font-bold rounded-full hover:bg-white/90 transition-colors"
+      <Link 
+        to="/" 
+        className="px-8 py-3 bg-white text-softblack font-sans font-bold rounded-full hover:bg-white/90 transition-colors inline-block"
       >
         Take me home
-      </a>
+      </Link>
     </div>
   );
 }
