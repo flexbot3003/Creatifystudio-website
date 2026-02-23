@@ -200,8 +200,8 @@ export interface WhyChooseMeConfig {
 
 export const whyChooseMeConfig: WhyChooseMeConfig = {
   subtitle: "Why Choose Us",
-  titleRegular: "The Nexus",
-  titleItalic: "Difference",
+  titleRegular: "Creatify",
+  titleItalic: "The Difference",
   statsLabel: "By The Numbers",
   stats: [
     { value: 150, suffix: "+", label: "Projects Delivered" },
