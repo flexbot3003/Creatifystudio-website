@@ -9,7 +9,7 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   language: "en",
-  siteTitle: "Nexus Design Studio | Creative Design Agency",
+  siteTitle: "Creatify Design Studio | Creative Design Agency",
   siteDescription: "Premium design agency specializing in brand identity, web design, and digital experiences. We transform visions into stunning visual realities.",
 };
 
@@ -25,10 +25,10 @@ export interface HeroConfig {
 
 export const heroConfig: HeroConfig = {
   backgroundText: "CREATE",
-  heroImage: "/hero-designer.png",
-  heroImageAlt: "Creative designer with tablet",
-  overlayText: "Crafted by Nexus Studio",
-  brandName: "NEXUS",
+  heroImage: "", // Leaving this empty removes the image without breaking the code!
+  heroImageAlt: "Creative designer",
+  overlayText: "Website by Creatify",
+  brandName: "CREATIFY",
   navLinks: [
     { label: "Work", href: "#work" },
     { label: "Services", href: "#services" },
@@ -36,7 +36,6 @@ export const heroConfig: HeroConfig = {
     { label: "Contact", href: "#contact" },
   ],
 };
-
 // Intro Grid Section
 export interface PortfolioImage {
   src: string;
@@ -62,7 +61,7 @@ export const introGridConfig: IntroGridConfig = {
     { src: "/portfolio-4.jpg", alt: "UI/UX design project" },
     { src: "/portfolio-5.jpg", alt: "Creative packaging design" },
   ],
-  accentText: "Selected Works - 2024",
+  accentText: "", // Changed from "Selected Works - 2024"
 };
 
 // Featured Projects Section
@@ -206,9 +205,9 @@ export const whyChooseMeConfig: WhyChooseMeConfig = {
   statsLabel: "By The Numbers",
   stats: [
     { value: 150, suffix: "+", label: "Projects Delivered" },
-    { value: 8, suffix: "+", label: "Years Experience" },
-    { value: 98, suffix: "%", label: "Client Satisfaction" },
-    { value: 45, suffix: "+", label: "Awards Won" },
+    { value: 5, suffix: "+", label: "Years Experience" },
+    { value: 83, suffix: "%", label: "Client Satisfaction" },
+    { value: 8, suffix: "+", label: "Design Fields Covered" },
   ],
   featureCards: [
     {
@@ -253,31 +252,38 @@ export const testimonialsConfig: TestimonialsConfig = {
   testimonials: [
     {
       id: 1,
-      name: "Sarah Mitchell",
-      role: "CEO, Lumina Tech",
-      image: "/testimonial-1.jpg",
-      quote: "Nexus Studio transformed our brand completely. Their attention to detail and creative vision exceeded all our expectations. The rebrand increased our market recognition by 200%.",
+      name: "HeadsUp",
+      role: "Student Safety Hub",
+      image: "/testimonial-1.jpg", // You can swap these images in the public folder later
+      quote: "Creatify perfectly captured our mission to provide safe hubs for students in South Africa. The design is approachable, friendly, and exactly what we needed.",
     },
     {
       id: 2,
-      name: "Marcus Chen",
-      role: "Founder, Artisan Coffee",
+      name: "Melora",
+      role: "Beauty Brand",
       image: "/testimonial-2.jpg",
-      quote: "Working with Nexus was an absolute pleasure. They understood our brand essence and created packaging that truly stands out on the shelves. Sales increased by 45% after the rebrand.",
+      quote: "Our beauty brand needed a fresh, elegant look. Creatify elevated our entire visual identity to match the quality of our products.",
     },
     {
       id: 3,
-      name: "Elena Rodriguez",
-      role: "CMO, Nova Finance",
+      name: "MiMi",
+      role: "Baby & Mommy Clothing",
       image: "/testimonial-3.jpg",
-      quote: "The UI/UX design Nexus delivered for our app was phenomenal. User engagement increased by 80% and our app store ratings jumped to 4.8 stars. Highly recommended!",
+      quote: "Working with Creatify was a dream. They designed a beautiful, soft, and modern brand aesthetic that our mommy demographic absolutely loves.",
     },
     {
       id: 4,
-      name: "David Park",
-      role: "Director, Elevate Wellness",
+      name: "Significance",
+      role: "Jewelry",
       image: "/testimonial-4.jpg",
-      quote: "Nexus Studio doesn't just design—they craft experiences. Our website has become a powerful conversion tool, with bookings up 120% since launch.",
+      quote: "The attention to detail Creatify brought to our jewelry brand was unmatched. Everything looks premium, luxurious, and highly professional.",
+    },
+    {
+      id: 5,
+      name: "Imperial FC",
+      role: "Weekend League Club",
+      image: "/testimonial-1.jpg", 
+      quote: "Creatify gave our Sunday league squad a professional edge. The graphics and branding make us look like a top-tier team on and off the pitch.",
     },
   ],
 };
@@ -362,13 +368,13 @@ export interface FooterConfig {
 }
 
 export const footerConfig: FooterConfig = {
-  logoText: "NEXUS",
+  logoText: "CREATIFY",
   contactLabel: "Get in Touch",
-  email: "hello@nexusstudio.com",
-  locationText: "123 Creative Avenue\nSan Francisco, CA 94102",
+  email: "phillipinem@creatifystudios.co.za",
+  locationText: "In these times, we prefer to practice safe distance, stay safe.",
   navigationLabel: "Navigation",
   navLinks: [
-    { label: "Home", href: "#" },
+    { label: "Home", href: "www.creatifystudios.co.za" },
     { label: "Work", href: "#work" },
     { label: "Services", href: "#services" },
     { label: "About", href: "#about" },
@@ -376,13 +382,11 @@ export const footerConfig: FooterConfig = {
   ],
   socialLabel: "Follow Along",
   socialLinks: [
-    { iconName: "Instagram", href: "https://instagram.com", label: "Instagram" },
-    { iconName: "Twitter", href: "https://twitter.com", label: "Twitter" },
-    { iconName: "Linkedin", href: "https://linkedin.com", label: "LinkedIn" },
-    { iconName: "Mail", href: "mailto:hello@nexusstudio.com", label: "Email" },
+    { iconName: "Instagram", href: "www.instagram.com/creatify_za?igsh=YzhyaG83eTVna3Uz&utm_source=qr", label: "Instagram" },
+    { iconName: "Mail", href: "mailto:phillipinem@creatifystudios.co.za", label: "Email" },
   ],
   tagline: "Creating exceptional designs\nthat inspire and convert",
-  copyright: "© 2024 Nexus Design Studio. All rights reserved.",
+  copyright: "© 2026 Creatify Design Studio. All rights reserved.",
   bottomLinks: [
     { label: "Privacy Policy", href: "#" },
     { label: "Terms of Service", href: "#" },
