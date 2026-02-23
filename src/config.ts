@@ -24,7 +24,7 @@ export interface HeroConfig {
 }
 
 export const heroConfig: HeroConfig = {
-  backgroundText: "CREATIFY",
+  backgroundText: "CREATE",
   heroImage: "", // Leaving this empty removes the image without breaking the code!
   heroImageAlt: "Creative designer",
   overlayText: "Website by Creatify",
