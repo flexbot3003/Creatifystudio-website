@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { featuredProjectsConfig } from '../config';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -141,13 +142,13 @@ export function FeaturedProjects() {
             </h2>
           </div>
           {featuredProjectsConfig.viewAllText && (
-            <a
-              href={featuredProjectsConfig.viewAllHref || '#contact'}
+            <Link
+              to={featuredProjectsConfig.viewAllHref || '/work'}
               className="mt-6 md:mt-0 inline-flex items-center gap-2 text-white/70 hover:text-white font-body text-sm transition-colors duration-300 group"
             >
               {featuredProjectsConfig.viewAllText}
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-            </a>
+            </Link>
           )}
         </div>
 
@@ -206,15 +207,15 @@ export function FeaturedProjects() {
                   {project.description}
                 </p>
                 {featuredProjectsConfig.viewProjectText && (
-                  <a
-                    href="#contact"
+                  <Link
+                    to="/work"
                     className={`project-text-item inline-flex items-center gap-2 text-white font-body text-sm border-b border-white/30 pb-1 hover:border-white transition-colors duration-300 group/link ${
                       index % 2 === 1 ? 'md:flex-row-reverse' : ''
                     }`}
                   >
                     {featuredProjectsConfig.viewProjectText}
                     <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-300" />
-                  </a>
+                  </Link>
                 )}
               </div>
             </div>
