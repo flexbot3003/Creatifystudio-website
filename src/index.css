@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Design Agency Color System - Teal & White Theme */
+    --background: 180 50% 8%; /* Deep teal #0a1a1a */
+    --foreground: 0 0% 100%; /* Pure white */
+    --card: 180 45% 12%;
+    --card-foreground: 0 0% 100%;
+    --popover: 180 50% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 175 75% 45%; /* Teal accent */
+    --primary-foreground: 180 50% 8%;
+    --secondary: 180 35% 18%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 180 30% 22%;
+    --muted-foreground: 180 20% 70%;
+    --accent: 175 75% 45%; /* Teal accent */
+    --accent-foreground: 180 50% 8%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 175 75% 45% / 0.15;
+    --input: 180 35% 18%;
+    --ring: 175 75% 45%;
+    --radius: 0.5rem;
+    
+    /* Custom properties */
+    --teal-dark: #0a1a1a;
+    --teal-mid: #143d3d;
+    --teal-light: #1f5a5a;
+    --teal-accent: #2dd4bf;
+    --pure-white: #ffffff;
+    --off-white: #f8fafc;
+    --soft-gray: #94a3b8;
+  }
+
+  .light-section {
+    --background: 0 0% 100%;
+    --foreground: 180 50% 8%;
+    --card: 180 20% 98%;
+    --card-foreground: 180 50% 8%;
+    --muted: 180 15% 96%;
+    --muted-foreground: 180 15% 45%;
+    --border: 175 75% 45% / 0.12;
+    --primary: 175 75% 40%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 175 75% 40%;
+    --accent-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', sans-serif;
+  }
+  
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-sans {
+    font-family: 'Manrope', sans-serif;
+  }
+  
+  .font-body {
+    font-family: 'DM Sans', sans-serif;
+  }
+}
+
+@layer components {
+  /* Viewfinder overlay effect */
+  .viewfinder {
+    position: relative;
+  }
+  
+  .viewfinder::before,
+  .viewfinder::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    z-index: 10;
+    transition: all 0.3s ease;
+  }
+  
+  .viewfinder::before {
+    top: 16px;
+    left: 16px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+  }
+  
+  .viewfinder::after {
+    bottom: 16px;
+    right: 16px;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+  }
+  
+  .viewfinder-corners {
+    position: relative;
+  }
+  
+  .viewfinder-corners .corner-tr,
+  .viewfinder-corners .corner-bl {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    z-index: 10;
+  }
+  
+  .viewfinder-corners .corner-tr {
+    top: 16px;
+    right: 16px;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+  }
+  
+  .viewfinder-corners .corner-bl {
+    bottom: 16px;
+    left: 16px;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .tracking-tight {
+    letter-spacing: -0.025em;
+  }
+  
+  .tracking-tighter {
+    letter-spacing: -0.05em;
+  }
+}
