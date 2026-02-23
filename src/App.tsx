@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect } from 'react';
 import { useLenis } from './hooks/useLenis';
 import { Hero } from './sections/Hero';
 import { IntroGrid } from './sections/IntroGrid';
@@ -12,46 +13,40 @@ import { Construction } from './sections/Construction';
 import { siteConfig } from './config';
 import './App.css';
 
-function App() {
-  // Initialize smooth scroll
-  useLenis();
+function HomePage() {
+  return (
+    <>
+      <Hero />
+      <main className="relative w-full overflow-x-hidden">
+        <IntroGrid />
+        <Services />
+        <WhyChooseMe />
+        <FeaturedProjects />
+        <Testimonials />
+        <FAQ />
+      </main>
+      <Footer />
+    </>
+  );
+}
 
-  // Keep track of what page we are looking at
-  const [currentPath, setCurrentPath] = useState(window.location.hash);
+export default function App() {
+  useLenis();
 
   useEffect(() => {
     if (siteConfig.siteTitle) document.title = siteConfig.siteTitle;
     if (siteConfig.language) document.documentElement.lang = siteConfig.language;
-
-    // Listen for when someone clicks a navigation link
-    const onHashChange = () => {
-      setCurrentPath(window.location.hash);
-      window.scrollTo(0, 0); // Scroll to top when changing pages
-    };
-    
-    window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
 
-  // If the URL has these specific links, show the Coming Soon page
-  const constructionPages = ['#about', '#services', '#work', '#contact'];
-  if (constructionPages.includes(currentPath)) {
-    return <Construction />;
-  }
-
-  // Otherwise, show the normal home page
   return (
-    <main className="relative w-full overflow-x-hidden">
-      <Hero />
-      <IntroGrid />
-      <Services />
-      <WhyChooseMe />
-      <FeaturedProjects />
-      <Testimonials />
-      <FAQ />
-      <Footer />
-    </main>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<Construction />} />
+        <Route path="/services" element={<Construction />} />
+        <Route path="/work" element={<Construction />} />
+        <Route path="/contact" element={<Construction />} />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
