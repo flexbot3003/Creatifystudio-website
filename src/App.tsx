@@ -9,7 +9,6 @@ import { FeaturedProjects } from './sections/FeaturedProjects';
 import { Testimonials } from './sections/Testimonials';
 import { FAQ } from './sections/FAQ';
 import { Footer } from './sections/Footer';
-import { Construction } from './sections/Construction';
 import { Contact } from './sections/Contact';
 import { About } from './sections/About';
 import { ServicesPage } from './sections/ServicesPage';
