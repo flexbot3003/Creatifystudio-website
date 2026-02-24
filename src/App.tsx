@@ -7,6 +7,7 @@ import { Services } from './sections/Services';
 import { WhyChooseMe } from './sections/WhyChooseMe';
 import { FeaturedProjects } from './sections/FeaturedProjects';
 import { Testimonials } from './sections/Testimonials';
+import { LogoTicker } from './sections/LogoTicker';
 import { FAQ } from './sections/FAQ';
 import { Footer } from './sections/Footer';
 import { Contact } from './sections/Contact';
@@ -14,6 +15,7 @@ import { About } from './sections/About';
 import { ServicesPage } from './sections/ServicesPage';
 import { Work } from './sections/Work';
 import { ProjectDetail } from './sections/ProjectDetail';
+import ClickSpark from './components/ClickSpark';
 import { siteConfig } from './config';
 import './App.css';
 
@@ -27,6 +29,8 @@ function HomePage() {
         <WhyChooseMe />
         <FeaturedProjects />
         <Testimonials />
+        {/* Logo Loop directly under Testimonials */}
+        <LogoTicker />
         <FAQ />
       </main>
       <Footer />
@@ -44,6 +48,16 @@ export default function App() {
 
   return (
     <Router>
+      {/* Global Spark Animation! */}
+      <ClickSpark
+        sparkColor="#ffffff"
+        sparkSize={10}
+        sparkRadius={15}
+        sparkCount={8}
+        duration={400}
+        easing="ease-out"
+        extraScale={1}
+      />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
