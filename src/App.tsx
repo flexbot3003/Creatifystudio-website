@@ -11,6 +11,8 @@ import { FAQ } from './sections/FAQ';
 import { Footer } from './sections/Footer';
 import { Construction } from './sections/Construction';
 import { Contact } from './sections/Contact';
+import { About } from './sections/About';
+import { ServicesPage } from './sections/ServicesPage';
 import { siteConfig } from './config';
 import './App.css';
 
@@ -43,8 +45,8 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<Construction />} />
-        <Route path="/services" element={<Construction />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<ServicesPage />} />
         <Route path="/work" element={<Construction />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
