@@ -15,7 +15,7 @@ import { About } from './sections/About';
 import { ServicesPage } from './sections/ServicesPage';
 import { Work } from './sections/Work';
 import { ProjectDetail } from './sections/ProjectDetail';
-import ClickSpark from './components/ClickSpark';
+import ClickSpark from './components/ui/ClickSpark';
 import { siteConfig } from './config';
 import './App.css';
 
@@ -29,7 +29,6 @@ function HomePage() {
         <WhyChooseMe />
         <FeaturedProjects />
         <Testimonials />
-        {/* Logo Loop directly under Testimonials */}
         <LogoTicker />
         <FAQ />
       </main>
