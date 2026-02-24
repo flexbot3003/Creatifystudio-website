@@ -1,18 +1,27 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function ClickSpark({ sparkColor = "#fff", sparkCount = 8, duration = 400 }: any) {
   const [clicks, setClicks] = useState<{id: number, x: number, y: number}[]>([]);
 
-  const handleClick = (e: any) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setClicks([...clicks, { id: Date.now(), x: e.clientX - rect.left, y: e.clientY - rect.top }]);
-    // Keep array clean
-    setTimeout(() => setClicks(prev => prev.filter(c => c.id !== clicks[0]?.id)), duration);
-  };
+  useEffect(() => {
+    // This listens to clicks across the entire website
+    const handleGlobalClick = (e: MouseEvent) => {
+      setClicks(prev => [...prev, { id: Date.now(), x: e.clientX, y: e.clientY }]);
+      
+      // Clean up the sparks after they finish animating
+      setTimeout(() => {
+        setClicks(prev => prev.filter(click => click.id !== Date.now()));
+      }, duration);
+    };
+
+    window.addEventListener('click', handleGlobalClick);
+    return () => window.removeEventListener('click', handleGlobalClick);
+  }, [duration]);
 
   return (
-    <div className="absolute inset-0 z-0 pointer-events-auto overflow-hidden" onClick={handleClick}>
+    // Fixed inset-0 covers the screen, pointer-events-none ensures it doesn't block your buttons!
+    <div className="fixed inset-0 pointer-events-none z-[9999]">
       {clicks.map(click => (
         <div key={click.id} className="absolute pointer-events-none" style={{ left: click.x, top: click.y }}>
           {Array.from({ length: sparkCount }).map((_, i) => (
