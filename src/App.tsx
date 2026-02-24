@@ -13,6 +13,8 @@ import { Construction } from './sections/Construction';
 import { Contact } from './sections/Contact';
 import { About } from './sections/About';
 import { ServicesPage } from './sections/ServicesPage';
+import { Work } from './sections/Work';
+import { ProjectDetail } from './sections/ProjectDetail';
 import { siteConfig } from './config';
 import './App.css';
 
@@ -47,9 +49,9 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<ServicesPage />} />
-        <Route path="/work" element={<Construction />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/work/:id" element={<ProjectDetail />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );
-}
