@@ -25,7 +25,7 @@ export interface HeroConfig {
 
 export const heroConfig: HeroConfig = {
   backgroundText: "CREATE",
-  heroImage: "", // Leaving this empty removes the image without breaking the code!
+  heroImage: "", 
   heroImageAlt: "Creative designer",
   overlayText: "Website by Creatify",
   brandName: "CREATIFY",
@@ -36,6 +36,7 @@ export const heroConfig: HeroConfig = {
     { label: "Contact", href: "/contact" },
   ],
 };
+
 // Intro Grid Section
 export interface PortfolioImage {
   src: string;
@@ -61,7 +62,7 @@ export const introGridConfig: IntroGridConfig = {
     { src: "/portfolio-4.jpg", alt: "UI/UX design project" },
     { src: "/portfolio-5.jpg", alt: "Creative packaging design" },
   ],
-  accentText: "", // Changed from "Selected Works - 2024"
+  accentText: "", 
 };
 
 // Featured Projects Section
@@ -89,19 +90,51 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
   titleRegular: "Selected",
   titleItalic: "Projects",
   viewAllText: "View All Projects",
-  viewAllHref: "#work",
+  viewAllHref: "/work",
   viewProjectText: "View Project",
   projects: [
     {
       id: 1,
+      title: "Lumin Dental",
+      category: "Brand Identity & Graphics",
+      year: "2026",
+      image: "/project-1.jpg",
+      description: "Brand reveal concepts and promotional materials tailored for a modern dental clinic.",
+    },
+    {
+      id: 2,
+      title: "Laomai Dental",
+      category: "Print & Digital Layout",
+      year: "2026",
+      image: "/project-2.jpg",
+      description: "Custom flyers, posters, and clinic branding to elevate the patient experience and aesthetic.",
+    },
+    {
+      id: 3,
+      title: "Creatify Collective",
+      category: "Web Design",
+      year: "2026",
+      image: "/project-3.jpg",
+      description: "The flagship digital home for our own freelance design collective, featuring seamless motion and UX.",
+    },
+    {
+      id: 4,
+      title: "Elevate Wellness",
+      category: "Web Design",
+      year: "2024",
+      image: "/project-4.jpg",
+      description: "Holistic wellness platform website featuring immersive visuals and seamless user journey.",
+    },
+    {
+      id: 5,
       title: "Lumina Tech Rebrand",
       category: "Brand Identity",
       year: "2024",
       image: "/project-1.jpg",
-      description: "Complete brand transformation for a leading SaaS company, including logo redesign, visual identity system, and brand guidelines.",
+      description: "Complete brand transformation for a leading SaaS company, including visual identity and guidelines.",
     },
     {
-      id: 2,
+      id: 6,
       title: "Artisan Coffee Co.",
       category: "Packaging Design",
       year: "2024",
@@ -109,7 +142,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       description: "Premium packaging design for specialty coffee brand, blending artisanal craftsmanship with modern aesthetics.",
     },
     {
-      id: 3,
+      id: 7,
       title: "Nova Finance App",
       category: "UI/UX Design",
       year: "2023",
@@ -117,12 +150,12 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       description: "Intuitive mobile banking experience designed to simplify financial management for the next generation.",
     },
     {
-      id: 4,
-      title: "Elevate Wellness",
-      category: "Web Design",
-      year: "2023",
+      id: 8,
+      title: "Urban Echo",
+      category: "Motion Design",
+      year: "2025",
       image: "/project-4.jpg",
-      description: "Holistic wellness platform website featuring immersive visuals and seamless user journey.",
+      description: "Dynamic motion graphics and social media campaign for an urban lifestyle brand.",
     },
   ],
 };
@@ -207,188 +240,3 @@ export const whyChooseMeConfig: WhyChooseMeConfig = {
     { value: 150, suffix: "+", label: "Projects Delivered" },
     { value: 5, suffix: "+", label: "Years Experience" },
     { value: 83, suffix: "%", label: "Client Satisfaction" },
-    { value: 8, suffix: "+", label: "Design Fields Covered" },
-  ],
-  featureCards: [
-    {
-      image: "/feature-1.jpg",
-      imageAlt: "Creative team collaboration",
-      title: "Collaborative Approach",
-      description: "We work as an extension of your team, ensuring every design decision aligns with your vision and goals.",
-    },
-    {
-      image: "/feature-2.jpg",
-      imageAlt: "Design process",
-      title: "Strategic Thinking",
-      description: "Every pixel serves a purpose. Our designs are backed by research, strategy, and a deep understanding of your audience.",
-    },
-  ],
-  wideImage: "/feature-wide.jpg",
-  wideImageAlt: "Our design studio workspace",
-  wideTitle: "Where Creativity Meets Strategy",
-  wideDescription: "Our studio is a hub of innovation where talented designers, strategists, and technologists come together to create extraordinary work.",
-};
-
-// Testimonials Section
-export interface Testimonial {
-  id: number;
-  name: string;
-  role: string;
-  image: string;
-  quote: string;
-}
-
-export interface TestimonialsConfig {
-  subtitle: string;
-  titleRegular: string;
-  titleItalic: string;
-  testimonials: Testimonial[];
-}
-
-export const testimonialsConfig: TestimonialsConfig = {
-  subtitle: "Client Stories",
-  titleRegular: "What They",
-  titleItalic: "Say About Us",
-  testimonials: [
-    {
-      id: 1,
-      name: "HeadsUp",
-      role: "Student Safety Hub",
-      image: "/testimonial-1.jpg", // You can swap these images in the public folder later
-      quote: "Creatify perfectly captured our mission to provide safe hubs for students in South Africa. The design is approachable, friendly, and exactly what we needed.",
-    },
-    {
-      id: 2,
-      name: "Melora",
-      role: "Beauty Brand",
-      image: "/testimonial-2.jpg",
-      quote: "Our beauty brand needed a fresh, elegant look. Creatify elevated our entire visual identity to match the quality of our products.",
-    },
-    {
-      id: 3,
-      name: "MiMi",
-      role: "Baby & Mommy Clothing",
-      image: "/testimonial-3.jpg",
-      quote: "Working with Creatify was a dream. They designed a beautiful, soft, and modern brand aesthetic that our mommy demographic absolutely loves.",
-    },
-    {
-      id: 4,
-      name: "Significance",
-      role: "Jewelry",
-      image: "/testimonial-4.jpg",
-      quote: "The attention to detail Creatify brought to our jewelry brand was unmatched. Everything looks premium, luxurious, and highly professional.",
-    },
-    {
-      id: 5,
-      name: "Imperial FC",
-      role: "Weekend League Club",
-      image: "/testimonial-1.jpg", 
-      quote: "Creatify gave our Sunday league squad a professional edge. The graphics and branding make us look like a top-tier team on and off the pitch.",
-    },
-  ],
-};
-
-// FAQ Section
-export interface FAQItem {
-  id: string;
-  question: string;
-  answer: string;
-}
-
-export interface FAQConfig {
-  subtitle: string;
-  titleRegular: string;
-  titleItalic: string;
-  ctaText: string;
-  ctaButtonText: string;
-  ctaHref: string;
-  faqs: FAQItem[];
-}
-
-export const faqConfig: FAQConfig = {
-  subtitle: "Common Questions",
-  titleRegular: "Frequently",
-  titleItalic: "Asked Questions",
-  ctaText: "Still have questions?",
-  ctaButtonText: "Get in Touch",
-  ctaHref: "/contact",
-  faqs: [
-    {
-      id: "faq-1",
-      question: "What services does Nexus Studio offer?",
-      answer: "We offer comprehensive design services including brand identity, web design, UI/UX design, packaging design, and digital marketing assets. Each project is tailored to meet your specific needs and goals.",
-    },
-    {
-      id: "faq-2",
-      question: "How long does a typical project take?",
-      answer: "Project timelines vary based on scope and complexity. A brand identity project typically takes 4-8 weeks, while website design can range from 6-12 weeks. We'll provide a detailed timeline during our initial consultation.",
-    },
-    {
-      id: "faq-3",
-      question: "What is your design process?",
-      answer: "Our process includes discovery and research, strategy development, concept creation, design refinement, and final delivery. We maintain close communication throughout, ensuring the final result aligns perfectly with your vision.",
-    },
-    {
-      id: "faq-4",
-      question: "Do you work with clients internationally?",
-      answer: "Absolutely! We work with clients worldwide. Our team is experienced in remote collaboration, using tools like Figma, Slack, and video conferencing to ensure seamless communication across time zones.",
-    },
-    {
-      id: "faq-5",
-      question: "What are your pricing structures?",
-      answer: "We offer both project-based and retainer pricing models. Each project is quoted individually based on scope, complexity, and timeline. Contact us for a free consultation and customized quote.",
-    },
-  ],
-};
-
-// Footer Section
-export interface SocialLink {
-  iconName: string;
-  href: string;
-  label: string;
-}
-
-export interface FooterLink {
-  label: string;
-  href: string;
-}
-
-export interface FooterConfig {
-  logoText: string;
-  contactLabel: string;
-  email: string;
-  locationText: string;
-  navigationLabel: string;
-  navLinks: FooterLink[];
-  socialLabel: string;
-  socialLinks: SocialLink[];
-  tagline: string;
-  copyright: string;
-  bottomLinks: FooterLink[];
-}
-
-export const footerConfig: FooterConfig = {
-  logoText: "CREATIFY",
-  contactLabel: "Get in Touch",
-  email: "phillipinem@creatifystudios.co.za",
-  locationText: "In these times, we prefer to practice safe distance, stay safe.",
-  navigationLabel: "Navigation",
-  navLinks: [
-    { label: "Home", href: "www.creatifystudios.co.za" },
-    { label: "Work", href: "/work" },
-    { label: "Services", href: "/services" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
-  ],
-  socialLabel: "Follow Along",
-  socialLinks: [
-    { iconName: "Instagram", href: "www.instagram.com/creatify_za?igsh=YzhyaG83eTVna3Uz&utm_source=qr", label: "Instagram" },
-    { iconName: "Mail", href: "mailto:phillipinem@creatifystudios.co.za", label: "Email" },
-  ],
-  tagline: "Creating exceptional designs\nthat inspire and convert",
-  copyright: "© 2026 Creatify Design Studio. All rights reserved.",
-  bottomLinks: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-  ],
-};
