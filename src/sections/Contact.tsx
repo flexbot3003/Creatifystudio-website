@@ -2,6 +2,21 @@ import { Link } from 'react-router-dom';
 import { Mail, Instagram, ArrowLeft } from 'lucide-react';
 
 export function Contact() {
+  
+  // ADDED: This function catches the submit, stops the page reload, and sends the data to Netlify silently.
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData as any).toString(),
+    })
+      .then(() => alert("Message sent successfully! We will be in touch."))
+      .catch(() => alert("Something went wrong. Please try again."));
+  };
+
   return (
     <div className="min-h-screen bg-forest-dark text-white flex flex-col">
       <nav className="p-6 md:px-12 py-6">
@@ -50,8 +65,8 @@ export function Contact() {
             
             <h2 className="text-2xl font-sans font-bold mb-8 relative z-10">Send us a message</h2>
             
-            {/* NETLIFY FORM MAGIC STARTS HERE */}
-            <form name="contact" method="POST" data-netlify="true" className="space-y-5 relative z-10">
+            {/* UPDATED: Added onSubmit={handleSubmit} right here */}
+            <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-5 relative z-10">
               <input type="hidden" name="form-name" value="contact" />
               
               <div>
