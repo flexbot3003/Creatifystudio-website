@@ -1,20 +1,32 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Instagram, ArrowLeft } from 'lucide-react';
 
 export function Contact() {
-  
-  // ADDED: This function catches the submit, stops the page reload, and sends the data to Netlify silently.
+  // ADDED: A state variable to track if the form was successfully sent
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData as any).toString(),
     })
-      .then(() => alert("Message sent successfully! We will be in touch."))
-      .catch(() => alert("Something went wrong. Please try again."));
+      .then(() => {
+        // UPDATED: Show the success message and clear the inputs
+        setStatus('success');
+        form.reset(); 
+        
+        // Optional: Hide the success message again after 5 seconds
+        setTimeout(() => setStatus('idle'), 5000);
+      })
+      .catch(() => {
+        setStatus('error');
+      });
   };
 
   return (
@@ -64,8 +76,25 @@ export function Contact() {
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/5 rounded-full blur-3xl" />
             
             <h2 className="text-2xl font-sans font-bold mb-8 relative z-10">Send us a message</h2>
+
+            {/* ADDED: Clean, premium success banner that appears after sending */}
+            {status === 'success' && (
+              <div className="bg-white rounded-2xl p-4 mb-6 relative z-10 transition-all">
+                <p className="font-sans font-medium text-forest-dark text-center">
+                  Thank you. Your message has been received.
+                </p>
+              </div>
+            )}
+
+            {/* ADDED: Error state just in case something goes wrong */}
+            {status === 'error' && (
+              <div className="bg-red-500/10 border border-red-500/20 rounded-2xl p-4 mb-6 relative z-10">
+                <p className="font-sans font-medium text-red-200 text-center">
+                  Something went wrong. Please try again.
+                </p>
+              </div>
+            )}
             
-            {/* UPDATED: Added onSubmit={handleSubmit} right here */}
             <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-5 relative z-10">
               <input type="hidden" name="form-name" value="contact" />
               
